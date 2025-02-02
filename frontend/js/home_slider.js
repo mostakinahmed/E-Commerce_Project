@@ -1,9 +1,11 @@
+//declare all image under an array
 const image = [
   "../img/cover-1.jpg",
   "../img/cover-2.jpg",
   "../img/cover-3.jpg",
   "../img/cover-4.jpg",
 ];
+//set time for image change
 let index = 0;
 let time = 3000;
 
