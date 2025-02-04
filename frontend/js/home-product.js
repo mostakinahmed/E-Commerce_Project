@@ -1,3 +1,20 @@
 import productCard from "../js/shared/productCard.js";
-const div = document.getElementById("product-container");
-div.innerHTML = productCard();
+function loadProduct() {
+  const url = "http://localhost:5000/api/latestproducts";
+  fetch(url)
+    .then((res) => res.json())
+    .then((res) => printdata(res));
+}
+
+loadProduct();
+
+function printdata(products) {
+  const div = document.getElementById("product-container");
+  let htmlCode = "";
+  products.forEach((product) => {
+    htmlCode += productCard(product);
+    console.log(product);
+  });
+
+  div.innerHTML = htmlCode;
+}

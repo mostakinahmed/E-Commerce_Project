@@ -24,6 +24,28 @@ async function run() {
     await client.connect();
     console.log("The database is connected");
 
+    const db = client.db("e-commerce");
+    const sliderCollection = db.collection("sliders");
+    const productCollection = db.collection("products");
+
+    //databse sliders management
+    app.get("/api/sliders", async (req, res) => {
+      const result = await sliderCollection.find().toArray();
+      res.send(result);
+    });
+
+    //Latest product management
+
+    app.get("/api/latestproducts", async (req, res) => {
+      const productCount = await productCollection.countDocuments();
+      let skip = 0;
+      if (productCount > 10) {
+        skip = productCount - 10;
+      }
+      const result = await productCollection.find().skip(skip).toArray();
+      res.send(result);
+    });
+
     app.listen(process.env.PORT, () => {
       console.log(`Example app listening on port ${port}`);
     });
