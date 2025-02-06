@@ -8,6 +8,7 @@ const dotenv = require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//store variable to env file
 const uri = process.env.URI;
 console.log(uri);
 
@@ -36,6 +37,7 @@ async function run() {
 
     //Latest product management
 
+    //Latest product management
     app.get("/api/latestproducts", async (req, res) => {
       const productCount = await productCollection.countDocuments();
       let skip = 0;
