@@ -6,6 +6,8 @@ function loadSlider() {
       let index = 0;
       let time = 3000;
 
+      //create function
+      //change image
       function changeImage() {
         const container = document.getElementById("slider-container");
         const htmlCode = `<img src="${image[index].img}"/>`;
