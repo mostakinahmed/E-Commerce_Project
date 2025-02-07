@@ -13,7 +13,6 @@ function printdata(products) {
   let htmlCode = "";
   products.forEach((product) => {
     htmlCode += productCard(product);
-    console.log(product);
   });
 
   div.innerHTML = htmlCode;
