@@ -1,6 +1,6 @@
 export const sliceDescription = (description) => {
   const result =
-    description.length > 70 ? description.slice(0, 700) + "..." : description;
+    description.length > 65 ? description.slice(0, 65) + "..." : description;
   return result;
 };
 
