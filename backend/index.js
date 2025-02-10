@@ -36,8 +36,6 @@ async function run() {
     });
 
     //Latest product management
-
-    //Latest product management
     app.get("/api/latestproducts", async (req, res) => {
       const productCount = await productCollection.countDocuments();
       let skip = 0;
@@ -48,6 +46,8 @@ async function run() {
       res.send(result);
     });
 
+    //listen management added
+    //listen management
     app.listen(process.env.PORT, () => {
       console.log(`Example app listening on port ${port}`);
     });

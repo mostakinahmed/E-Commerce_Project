@@ -7,7 +7,7 @@ function loadProduct() {
     .then((res) => res.json())
     .then((res) => printdata(res));
 }
-
+console.log("mostakin");
 loadProduct();
 
 function printdata(products) {
