@@ -35,6 +35,12 @@ async function run() {
       res.send(result);
     });
 
+    // All product management
+    app.get("/api/products", async (req, res) => {
+      const result = await productCollection.find().toArray();
+      res.send(result);
+    });
+
     //Latest product management
     app.get("/api/latestproducts", async (req, res) => {
       const productCount = await productCollection.countDocuments();
@@ -47,7 +53,6 @@ async function run() {
     });
 
     //listen management added
-    //listen management
     app.listen(process.env.PORT, () => {
       console.log(`Example app listening on port ${port}`);
     });
