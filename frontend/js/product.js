@@ -1,4 +1,5 @@
 import { makeUrl } from "./shared/commonFun.js";
+import productCard from "./shared/productCard.js";
 
 function loadProduct() {
   const url = makeUrl("/products");
@@ -8,6 +9,12 @@ function loadProduct() {
 }
 
 function printData(products) {
-  console.log(products);
+  const div = document.getElementById("our-product-container");
+  let htmlCode = "";
+  products.forEach((product) => {
+    const code = productCard(product);
+    htmlCode += code;
+  });
+  div.innerHTML = htmlCode;
 }
 loadProduct();

@@ -1,0 +1,17 @@
+#our-product-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: auto;
+}
+section {
+  padding: 20px 0;
+}
+section h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
